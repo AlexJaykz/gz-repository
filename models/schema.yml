@@ -1,0 +1,24 @@
+version: 2
+
+models:
+  - name: sales
+    description: testing PK
+    tests:
+      - unique:
+          column_name: "(orders_id || '-' || products_id)"
+    columns:
+      - name: products_id
+        description: testing for incorrect values
+        tests:
+          - not_null
+      - name: qty
+      - name: turnover
+        description: testing for incorrect values
+        tests:
+          - not_null
+      - name: purchase_cost   
+        description: testing for incorrect values
+        tests:
+          - not_null
+      - name: margin
+        description: margin column
